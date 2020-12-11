@@ -23,7 +23,7 @@ Email: yjinghao@bu.edu
   
 * Step3: Set up Jaeger
   * log out head VM and then in the terminal run `ssh -A ubuntu@128.31.27.227 -L 16687:localhost:16686`
-  * First I use `scp -r /Users/jinghao/assign4_cluster ubuntu@128.31.27.227:/home/ubuntu` upload my script file to head VM and in head VM run`scp -r /home/ubuntu/assign4_cluster ubuntu@192.168.100.49:/home/ubuntu` upload code to worker node. I also upload a folder name "yml" to the head VM. The folder contain the docker-compose.yml file which is used to configure jaeger's services.
+  * First I use `scp -r /Users/jinghao/Assignment4 ubuntu@128.31.27.227:/home/ubuntu` upload my script file to head VM and in head VM run`scp -r /home/ubuntu/Assignment4 ubuntu@192.168.100.49:/home/ubuntu` upload code to worker node. I also upload a folder name "yml" to the head VM. The folder contain the docker-compose.yml file which is used to configure jaeger's services.
   
   * Next I run docker `pull docker.io/cassandra` and `pull docker.io/cassandra`
   * In both VMs, I run `sudo docker run -d --name jaeger-agent \ -p 5775:5775/udp \ -p 6831:6831/udp \ -p 6832:6832/udp \ -p 5778:5778 \ --restart=always \ jaegertracing/jaeger-agent --reporter.grpc.host-port=192.168.100.161:14250`
