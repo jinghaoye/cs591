@@ -29,6 +29,6 @@ Email: yjinghao@bu.edu
   * In both VMs, I run `sudo docker run -d --name jaeger-agent \ -p 5775:5775/udp \ -p 6831:6831/udp \ -p 6832:6832/udp \ -p 5778:5778 \ --restart=always \ jaegertracing/jaeger-agent --reporter.grpc.host-port=192.168.100.161:14250`
  
 * Step4: Run and trace the code
-  * In the head vm, first change the current directory to the folder containing the code `cd assign4_cluster/` and open ipython by run `ipython`
+  * In the head vm, first change the current directory to the folder containing the code `cd Assignmen4/` and open ipython by run `ipython`
   * run `%run assignment_4.py`
   * open the website and go to `localhost:16687` to see the trace
